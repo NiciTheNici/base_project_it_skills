@@ -15,5 +15,7 @@ export class Console extends BaseEntity {
   @ManyToMany(
     () => User,
   )
-  @JoinTable()
+  @JoinTable({
+    name: "users_consoles"
+  })
   users: User[];}
