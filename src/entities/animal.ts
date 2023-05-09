@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-enum AnimalType {
+export enum AnimalType {
   MAMMAL,
   REPTILE,
   BIRD,

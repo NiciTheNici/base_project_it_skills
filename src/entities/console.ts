@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./user";
+import { Person } from "./person";
 
 @Entity()
 export class Console extends BaseEntity {
@@ -13,9 +13,9 @@ export class Console extends BaseEntity {
   brand: string;
 
   @ManyToMany(
-    () => User,
+    () => Person,
   )
   @JoinTable({
     name: "users_consoles"
   })
-  users: User[];}
+  users: Person[];}

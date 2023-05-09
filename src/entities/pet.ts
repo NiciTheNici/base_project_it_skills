@@ -1,22 +1,19 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 import { Animal } from "./animal";
-import { User } from "./user";
+import { Person } from "./person";
 
 @Entity()
 export class Pet extends Animal {
-  @PrimaryGeneratedColumn()
-  id: number;
-
   @Column()
   name: string;
 
   @ManyToOne(
-    () => User,
-    user => user.pets,
+    () => Person,
+    person => person.pets,
   )
   @JoinColumn({ // responsible for showing "user_id" Column when you query the Pet table
-    name: 'user_id'
+    name: 'person_id'
   })
-  user: User;
+  user: Person;
   
 }

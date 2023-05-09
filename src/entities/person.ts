@@ -1,11 +1,11 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Pet } from "./pet";
 
 @Entity()
-export class User extends BaseEntity {
+export class Person extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
-  
+    
   @Column()
   username: string;
 
@@ -13,7 +13,7 @@ export class User extends BaseEntity {
   first_name: string;
   
   @Column({
-    unique: true
+    // unique: true
   })
   email: string;
 
