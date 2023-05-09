@@ -1,4 +1,5 @@
 # Running
+You need to run the following commands in order to get this project running in dev mode.
 ## Docker
 ```bash
 $ docker-compose up
