@@ -1,4 +1,6 @@
 import { DataSource } from "typeorm"
+import { User } from "./entities/user";
+import { Animal } from "./entities/animal";
 
 
 
@@ -9,6 +11,11 @@ const main = async() => {
     port: 5432,
     username: "postgres",
     database: "base_project",
+    synchronize: true,
+    entities: [
+      User,
+      Animal,
+    ]
   });
 
   try {
