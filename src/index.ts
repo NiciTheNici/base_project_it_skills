@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm"
 import { User } from "./entities/user";
 import { Animal } from "./entities/animal";
+import { Pet } from "./entities/pet";
 
 
 
@@ -15,6 +16,7 @@ const main = async() => {
     entities: [
       User,
       Animal,
+      Pet,
     ]
   });
 

@@ -1,8 +1,17 @@
-import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+
+enum AnimalType {
+  MAMMAL,
+  REPTILE,
+  BIRD,
+  AMPHIBIAN,
+  FISH,
+  INVERTEBRATE,
+}
 
 @Entity()
 export class Animal extends BaseEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
@@ -10,4 +19,10 @@ export class Animal extends BaseEntity {
 
   @Column()
   age: number;
+
+  @Column({
+    type: "simple-enum",
+    enum: AnimalType,
+  })
+  type: AnimalType
 }

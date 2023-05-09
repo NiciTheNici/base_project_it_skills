@@ -1,4 +1,5 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Pet } from "./pet";
 
 @Entity()
 export class User extends BaseEntity {
@@ -30,19 +31,25 @@ export class User extends BaseEntity {
     nullable: true,
   })
   additional_info: {
-    eye_color: "brown",
-    height: 179,
+    eye_color: string,
+    height: number,
   }
 
   @Column({
     type: "simple-array",
     default: [],
   })
-  pets: string[];
+  keyboards: string[];
 
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(
+    () => Pet,
+    pet => pet.user
+  )
+  pets: Pet[];
 }
