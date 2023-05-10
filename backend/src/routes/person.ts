@@ -5,7 +5,6 @@ import { QueryFailedError} from 'typeorm';
 const router = express.Router();
 
 router.post('/api/person', async (req, res) => {
-  console.log(req.body)
   const {
     username,
     first_name,
