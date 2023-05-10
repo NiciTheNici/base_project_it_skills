@@ -17,8 +17,14 @@ router.post('/api/person', async (req, res) => {
     email: email,
     age: age,
   })
-  await person.save();
-  return res.json(person);
+  try {
+    await person.save();
+    return res.json(person);
+  }
+  catch (error) {
+    res.statusCode = 500;
+    return res.json(error);
+  }
 });
 
 export { router as createPersonRouter }
