@@ -1,5 +1,6 @@
 import express from "express";
 import { Person } from "../entities/person";
+import { QueryFailedError} from 'typeorm';
 
 const router = express.Router();
 
@@ -23,7 +24,16 @@ router.post('/api/person', async (req, res) => {
   }
   catch (error) {
     res.statusCode = 500;
-    return res.json(error);
+  if (error instanceof QueryFailedError) {
+    console.error('PostgreSQL Error:', error.message);
+    res.send(error.message);
+  } else {
+    console.error('Error executing database operation:', error);
+  }
+
+  // catch (error) {
+  //   res.statusCode = 500;
+  //   return res.json(error.);
   }
 });
 
