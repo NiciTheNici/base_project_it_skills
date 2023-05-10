@@ -40,11 +40,19 @@ router.get('/api/person', async (req, res) => {
 
 router.get('/api/person/:id', async (req, res) => {
   const id = req.params.id;
-  const person = await Person.find({
-    where: {
-      id: +id,
+  try {
+    const person = await Person.findOne({
+      where: {
+        id: +id,
+      }
+    })
+    if (person == null) {
+      return res.send("no person found with this id --> " + id)
     }
-  })
-  return res.json(person);
+    return res.json(person);
+  }
+  catch (error) {
+    return res.json(error)
+  }
 })
 export { router as createPersonRouter }

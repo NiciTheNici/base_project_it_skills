@@ -4,7 +4,7 @@ import { Pet } from "./entities/pet";
 import { Console } from "./entities/console";
 import express from "express";
 import { Person } from "./entities/person";
-import { createPersonRouter } from "./routes/create_person";
+import { createPersonRouter } from "./routes/person";
 
 
 const app = express();
