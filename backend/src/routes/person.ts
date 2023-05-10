@@ -37,4 +37,14 @@ router.get('/api/person', async (req, res) => {
   const persons = await Person.find();
   res.json(persons);
 })
+
+router.get('/api/person/:id', async (req, res) => {
+  const id = req.params.id;
+  const person = await Person.find({
+    where: {
+      id: +id,
+    }
+  })
+  return res.json(person);
+})
 export { router as createPersonRouter }
