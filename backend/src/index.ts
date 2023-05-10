@@ -46,18 +46,18 @@ const main = async() => {
     lilly.name = "lilly"
     await db.manager.save(lilly);
 
-    const me = new Person();
-    me.username = "Nici";
-    me.first_name = "Nicolas";
-    me.email = "example@example.com"
-    me.age = 17
-    me.additional_info = {
-      eye_color: "brown",
-      height: 178,
-    }
-    me.keyboards = ["Discipline v1", "Discipline v2", "tm680"];
-    me.pets = [lilly];
-    await db.manager.save(me);
+    // const me = new Person();
+    // me.username = "Nici";
+    // me.first_name = "Nicolas";
+    // me.email = "example@example.com"
+    // me.age = 17
+    // me.additional_info = {
+    //   eye_color: "brown",
+    //   height: 178,
+    // }
+    // me.keyboards = ["Discipline v1", "Discipline v2", "tm680"];
+    // me.pets = [lilly];
+    // await db.manager.save(me);
 
 
 }
