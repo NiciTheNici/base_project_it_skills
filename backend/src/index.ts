@@ -29,7 +29,7 @@ const main = async() => {
     await db.initialize();
     console.log("Connected to database");
 
-    // app.use(express.json);
+    app.use(express.json());
     app.use(createPersonRouter);
     app.listen(8080, () => {
       console.log("Now running on port 8080")
