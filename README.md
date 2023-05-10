@@ -7,6 +7,7 @@ $ docker-compose up
 ## TypeORM
 ```bash
 $ npm i
+$ npm i -g nodemon
 $ npm run dev
 ```
 # Documentation
