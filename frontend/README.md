@@ -1,16 +1,40 @@
-# Bootstrap Sass & JS
+# frontend
 
-Include [Bootstrap](https://getbootstrap.com)'s source Sass and compiled JavaScript bundle via npm. Also includes the [Autoprefixer](https://github.com/postcss/autoprefixer) for cross-browser CSS, [Stylelint](https://stylelint.io) for Sass code quality, and [Popper](https://popper.js.org), a peer dependency of Bootstrap's JS used to position dropdowns, popovers, and tooltips.
+This template should help get you started developing with Vue 3 in Vite.
 
-## Edit in browser
+## Recommended IDE Setup
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/twbs/examples/tree/main/sass-js?file=index.html)
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## How to use
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
 
 ```sh
-git clone https://github.com/twbs/examples.git
-cd examples/sass-js/
 npm install
-npm start
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
 ```
