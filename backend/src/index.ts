@@ -10,6 +10,7 @@ import { createPersonRouter } from "./routes/person";
 const app = express();
 
 const main = async() => {
+  var cors = require('cors')
   const db = new DataSource({
     type: "postgres", 
     host: "localhost",
@@ -29,6 +30,7 @@ const main = async() => {
     await db.initialize();
     console.log("Connected to database");
 
+    app.use(cors());
     app.use(express.json());
     app.use(createPersonRouter);
     app.listen(8080, () => {

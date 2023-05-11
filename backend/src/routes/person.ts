@@ -10,12 +10,14 @@ router.post('/api/person', async (req, res) => {
     first_name,
     email,
     age,
+    keyboards,
   } = req.body
   const person = Person.create({
     username: username,
     first_name: first_name,
     email: email,
     age: age,
+    keyboards: keyboards,
   })
   try {
     await person.save();
