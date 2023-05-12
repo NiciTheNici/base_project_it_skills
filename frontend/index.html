@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang='de-CH'>
 
-<head></head>
+<head><title>Notizen</title></head>
 
 <script src="script.js"></script>
 
 <body>
   <h1>Base Project</h1>
-  <button type="button" onclick="getPersons()">Get People</button>
-  <form action="javascript:addPerson()">
-    <label for="username">Username</label><br>
-    <input type="text" id="username" value="Nici"><br>
-    <label for="first_name">First Name</label><br>
-    <input type="text" id="first_name" value="Nicolas"><br>
-    <label for="email">Email</label><br>
-    <input type="text" id="email" value="nicolas@example.com"><br>
-    <label for="age">Age</label><br>
-    <input type="text" id="age" value="17"><br>
-    <button type="submit">Create new Person</button>
+  <button type="button" onclick="getNotes()">Get People</button>
+  <form action="javascript:addNote()">
+    <label for="title">Title</label><br>
+    <input type="text" id="title" value="Nici"><br>
+    <label for="note_text">Note</label><br>
+    <input type="text" id="note_text" value="Nicolas"><br>
+    <button type="submit">Create new Note</button>
   </form>
 </body>
 
