@@ -35,9 +35,9 @@ export class Person extends BaseEntity {
     height: number,
   }
 
-  @Column({
-    type: "simple-array",
-    default: [],
+  @Column("text", {
+    array: true,
+    default: []
   })
   keyboards: string[];
 
